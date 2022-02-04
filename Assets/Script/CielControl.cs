@@ -145,6 +145,14 @@ public class CielControl : MonoBehaviour
         #endregion
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "MejaBundar")
+        {
+            Debug.Log("Berhasil");
+        }
+    }
+
     private void FixedUpdate()
     {
         movement = cielInput.Player.Move.ReadValue<Vector2>();
