@@ -4,16 +4,28 @@ using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
-    public Vector2 autoPlayerSearch;
-    // Start is called before the first frame update
-    void Start()
+    [Header("Configuration")]
+    [SerializeField] bool autoFindPlayer;
+    [SerializeField] GameObject playerGameObject;
+
+    [SerializeField] bool autoOffsetCamera;
+    [SerializeField] Vector3 cameraOffset;
+
+    private void Awake()
     {
-        
+        if (autoFindPlayer)
+        {
+            playerGameObject = GameObject.FindGameObjectWithTag("Player");
+        }
+
+        if (autoOffsetCamera && autoFindPlayer)
+        {
+            cameraOffset = (transform.position - playerGameObject.transform.position);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void LateUpdate()
     {
-        
+        transform.position = (playerGameObject.transform.position + cameraOffset);
     }
 }
