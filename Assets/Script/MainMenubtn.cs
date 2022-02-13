@@ -6,13 +6,13 @@ public class MainMenubtn : MonoBehaviour
 {
     public Animator anim;
     public Image image;
+
     public void StartGame()
     {
         StartCoroutine(Fading());
     }
 
-
-    IEnumerator Fading()
+    private IEnumerator Fading()
     {
         anim.SetBool("Fade", true);
         yield return new WaitUntil(() => image.color.a == 1);

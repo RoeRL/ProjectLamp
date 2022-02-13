@@ -1,15 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
     [Header("Configuration")]
-    [SerializeField] bool autoFindPlayer;
-    [SerializeField] GameObject playerGameObject;
+    [SerializeField] private bool autoFindPlayer;
 
-    [SerializeField] bool autoOffsetCamera;
-    [SerializeField] Vector3 cameraOffset;
+    [SerializeField] private GameObject playerGameObject;
+
+    [SerializeField] private bool autoOffsetCamera;
+    [SerializeField] private Vector3 cameraOffset;
 
     private void Awake()
     {

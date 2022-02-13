@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Lockpick : MonoBehaviour
 {
     public Rigidbody2D rigidbody2d;
     public float moveTo = -300f;
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -26,12 +25,6 @@ public class Lockpick : MonoBehaviour
 
     private void LateUpdate()
     {
-
-
         rigidbody2d.AddForce(new Vector2(moveTo, 0f) * Time.deltaTime);
     }
-
-    
-
-
 }

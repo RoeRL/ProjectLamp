@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -23,21 +21,21 @@ public class CielControl : MonoBehaviour
         }
     }
 
-
     private void OnEnable()
     {
         cielInput.Player.Enable();
     }
+
     private void OnDisable()
     {
         cielInput.Player.Disable();
     }
 
-
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         #region Controller
+
         //Up Down Animation
 
         if (Keyboard.current.wKey.wasPressedThisFrame)
@@ -90,7 +88,6 @@ public class CielControl : MonoBehaviour
             animator.SetFloat("FrontSpeed", 0);
         }
 
-
         //Left Right Animation
 
         if (Keyboard.current.dKey.wasPressedThisFrame)
@@ -142,7 +139,8 @@ public class CielControl : MonoBehaviour
         {
             animator.SetFloat("LeftSpeed", 0);
         }
-        #endregion
+
+        #endregion Controller
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
