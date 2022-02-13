@@ -8,9 +8,9 @@ public class CielControl : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private float speed;
     [SerializeField] private CielInput cielInput;
-    [SerializeField] private Rigidbody2D rigidbody;
+    [SerializeField] public Rigidbody2D rigidbody;
     [SerializeField] private Vector2 movement;
-    [SerializeField] private BoxCollider2D collider;
+    [SerializeField] public BoxCollider2D collider;
 
     private void Awake()
     {

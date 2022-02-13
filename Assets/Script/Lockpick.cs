@@ -4,20 +4,34 @@ using UnityEngine;
 
 public class Lockpick : MonoBehaviour
 {
-    public Vector2 targetPosition;
-    public float speed;
-    private Vector2 position;
+    public Rigidbody2D rigidbody2d;
+    public float moveTo = -300f;
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        position = gameObject.transform.position;
+        rigidbody2d = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        float moveSpeed = speed * Time.deltaTime;
-
-        transform.position = Vector2.MoveTowards(position, targetPosition, moveSpeed);
+        if (collision.gameObject.name == "LockCorner")
+        {
+            moveTo = 300f;
+        }
+        if (collision.gameObject.name == "LockCorner2")
+        {
+            moveTo = -300f;
+        }
     }
+
+    private void LateUpdate()
+    {
+
+
+        rigidbody2d.AddForce(new Vector2(moveTo, 0f) * Time.deltaTime);
+    }
+
+    
+
+
 }
