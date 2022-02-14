@@ -55,8 +55,8 @@ public class CielControl : MonoBehaviour
             animator.SetBool("Back", true);
             animator.SetFloat("BackSpeed", 0.01f);
 
-            collider.size = new Vector2(0.8f, 2f);
-            collider.offset = new Vector2(-0.05f, 0.5f);
+            //collider.size = new Vector2(0.8f, 2f);
+            //collider.offset = new Vector2(-0.05f, 0.5f);
         }
         if (Keyboard.current.wKey.wasReleasedThisFrame)
         {
@@ -80,8 +80,8 @@ public class CielControl : MonoBehaviour
             animator.SetBool("Front", true);
             animator.SetFloat("FrontSpeed", 0.01f);
 
-            collider.size = new Vector2(0.8f, 2f);
-            collider.offset = new Vector2(-0.05f, -0.5f);
+            //collider.size = new Vector2(0.8f, 2f);
+            //collider.offset = new Vector2(-0.05f, -0.5f);
         }
         if (Keyboard.current.sKey.wasReleasedThisFrame)
         {
@@ -107,8 +107,8 @@ public class CielControl : MonoBehaviour
             animator.SetBool("Right", true);
             animator.SetFloat("RightSpeed", 0.01f);
 
-            collider.offset = new Vector2(0.5f, -0.05f);
-            collider.size = new Vector2(2f, 0.8f);
+            //collider.offset = new Vector2(0.5f, -0.05f);
+            //collider.size = new Vector2(2f, 0.8f);
         }
         if (Keyboard.current.dKey.wasReleasedThisFrame)
         {
@@ -132,8 +132,8 @@ public class CielControl : MonoBehaviour
             animator.SetBool("Left", true);
             animator.SetFloat("LeftSpeed", 0.01f);
 
-            collider.offset = new Vector2(-0.5f, -0.05f);
-            collider.size = new Vector2(2f, 0.8f);
+            //collider.offset = new Vector2(-0.5f, -0.05f);
+            //collider.size = new Vector2(2f, 0.8f);
         }
         if (Keyboard.current.aKey.wasReleasedThisFrame)
         {
@@ -141,14 +141,6 @@ public class CielControl : MonoBehaviour
         }
 
         #endregion Controller
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.name == "MejaBundar")
-        {
-            Debug.Log("Berhasil");
-        }
     }
 
     private void FixedUpdate()
