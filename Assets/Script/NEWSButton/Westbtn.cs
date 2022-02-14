@@ -6,6 +6,7 @@ public class Westbtn : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public static bool pressed = false;
     private bool inside = false;
+
     private void Update()
     {
         if (inside == true && Keyboard.current.spaceKey.wasPressedThisFrame)
@@ -25,6 +26,7 @@ public class Westbtn : MonoBehaviour
             }
         }
     }
+
     private void LateUpdate()
     {
         if (pressed == false)
@@ -32,6 +34,7 @@ public class Westbtn : MonoBehaviour
             spriteRenderer.color = new Color(0, 0, 0, 1);
         }
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         inside = true;

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,6 +6,7 @@ public class Eastbtn : MonoBehaviour
     private bool inside = false;
     public SpriteRenderer spriteRenderer;
     public static bool pressed = false;
+
     private void Update()
     {
         if (inside == true && Keyboard.current.spaceKey.wasPressedThisFrame)
@@ -27,6 +26,7 @@ public class Eastbtn : MonoBehaviour
             }
         }
     }
+
     private void LateUpdate()
     {
         if (pressed == false)
@@ -34,6 +34,7 @@ public class Eastbtn : MonoBehaviour
             spriteRenderer.color = new Color(0, 0, 0, 1);
         }
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         inside = true;
