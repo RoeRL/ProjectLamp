@@ -134,8 +134,8 @@ GameObject:
   - component: {fileID: 94171589}
   - component: {fileID: 94171588}
   - component: {fileID: 94171587}
-  - component: {fileID: 94171590}
   - component: {fileID: 94171591}
+  - component: {fileID: 94171590}
   m_Layer: 0
   m_Name: NorthButton
   m_TagString: Untagged
