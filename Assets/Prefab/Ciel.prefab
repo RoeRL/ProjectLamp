@@ -14,8 +14,7 @@ GameObject:
   - component: {fileID: 7627357055763230342}
   - component: {fileID: 7627357055763230337}
   - component: {fileID: 7627357055763230336}
-  - component: {fileID: 7627357055763230339}
-  - component: {fileID: 6123750625082110593}
+  - component: {fileID: 3850538371670498731}
   m_Layer: 0
   m_Name: Ciel
   m_TagString: Player
@@ -153,7 +152,7 @@ MonoBehaviour:
   speed: 5
   rigidbody: {fileID: 7627357055763230336}
   movement: {x: 0, y: 0}
-  collider: {fileID: 7627357055763230339}
+  collider: {fileID: 0}
 --- !u!50 &7627357055763230336
 Rigidbody2D:
   serializedVersion: 4
@@ -175,34 +174,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &7627357055763230339
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7627357055763230399}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2.8}
-    newSize: {x: 0.5, y: 0.7}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2, y: 2.8}
-  m_EdgeRadius: 0
---- !u!61 &6123750625082110593
-BoxCollider2D:
+--- !u!70 &3850538371670498731
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -214,16 +187,6 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.17}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2.8}
-    newSize: {x: 0.5, y: 0.7}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.26, y: 1.98}
-  m_EdgeRadius: 0
+  m_Offset: {x: -0.03, y: 0.12}
+  m_Size: {x: 0.93, y: 1.91}
+  m_Direction: 0
