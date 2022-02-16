@@ -4,9 +4,13 @@ using UnityEngine.InputSystem;
 public class Northbtn : MonoBehaviour
 {
     private bool inside = false;
-    public SpriteRenderer spriteRenderer;
+    public static SpriteRenderer spriteRenderer;
     public static bool pressed = false;
 
+    private void Start()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
     private void Update()
     {
         if (inside == true && Keyboard.current.spaceKey.wasPressedThisFrame)
@@ -18,25 +22,28 @@ public class Northbtn : MonoBehaviour
             }
             else
             {
-                pressed = false;
-                Eastbtn.pressed = false;
-                Southbtn.pressed = false;
-                Westbtn.pressed = false;
-                spriteRenderer.color = new Color(1, 0, 0, 1);
+                StartCoroutine(ButtonPuzzleManager.ResetButton());
             }
         }
     }
+
+   
 
     private void LateUpdate()
     {
         if (pressed == false)
         {
-            spriteRenderer.color = new Color(0, 0, 0, 1);
+            spriteRenderer.color = new Color(1, 1, 1, 1);
         }
     }
+    
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
         inside = true;
+    }
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        inside = false;
     }
 }
