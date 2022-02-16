@@ -11,6 +11,7 @@ public class Northbtn : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
+
     private void Update()
     {
         if (inside == true && Keyboard.current.spaceKey.wasPressedThisFrame)
@@ -27,8 +28,6 @@ public class Northbtn : MonoBehaviour
         }
     }
 
-   
-
     private void LateUpdate()
     {
         if (pressed == false)
@@ -36,12 +35,12 @@ public class Northbtn : MonoBehaviour
             spriteRenderer.color = new Color(1, 1, 1, 1);
         }
     }
-    
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
         inside = true;
     }
+
     public void OnTriggerExit2D(Collider2D collision)
     {
         inside = false;

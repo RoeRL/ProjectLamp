@@ -11,6 +11,7 @@ public class Eastbtn : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
+
     private void Update()
     {
         if (inside == true && Keyboard.current.spaceKey.wasPressedThisFrame)
@@ -39,6 +40,7 @@ public class Eastbtn : MonoBehaviour
     {
         inside = true;
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         inside = false;

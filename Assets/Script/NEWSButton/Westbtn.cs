@@ -40,6 +40,7 @@ public class Westbtn : MonoBehaviour
     {
         inside = true;
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         inside = false;
