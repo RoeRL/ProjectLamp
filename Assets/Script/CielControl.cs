@@ -8,12 +8,12 @@ public class CielControl : MonoBehaviour
     [SerializeField] private CielInput cielInput;
     [SerializeField] public Rigidbody2D rigidbody;
     [SerializeField] private Vector2 movement;
-    [SerializeField] public BoxCollider2D collider;
+    [SerializeField] public CapsuleCollider2D collider;
 
     private void Awake()
     {
         cielInput = new CielInput();
-        collider = GetComponent<BoxCollider2D>();
+        collider = GetComponent<CapsuleCollider2D>();
         rigidbody = GetComponent<Rigidbody2D>();
         if (rigidbody is null)
         {
