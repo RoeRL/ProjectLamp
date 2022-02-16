@@ -1,13 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ButtonPuzzleManager : MonoBehaviour
 {
-    public void Reset()
-    {
-
-    }
     public static IEnumerator ResetButton()
     {
         Northbtn.spriteRenderer.color = new Color(1, 0, 0, 1);
