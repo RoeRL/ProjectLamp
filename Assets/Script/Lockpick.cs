@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Lockpick : MonoBehaviour
 {
@@ -20,6 +21,13 @@ public class Lockpick : MonoBehaviour
         if (collision.gameObject.name == "LockCorner2")
         {
             moveTo = -300f;
+        }
+        if (collision.gameObject.name == "Slot1 collider")
+        {
+            if (Keyboard.current.spaceKey.wasPressedThisFrame)
+            {
+                Debug.Log("Gotcha!");
+            }
         }
     }
 
