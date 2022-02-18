@@ -1,11 +1,13 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
     public Animator anim;
     public Image image;
+    
 
     public void StartGame()
     {
@@ -16,6 +18,6 @@ public class MainMenuManager : MonoBehaviour
     {
         anim.SetBool("Fade", true);
         yield return new WaitUntil(() => image.color.a == 1);
-        Application.LoadLevel("SampleScene");
+        SceneManager.LoadScene(1);
     }
 }

@@ -6,19 +6,11 @@ public class CielControl : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private float speed;
     [SerializeField] private CielInput cielInput;
-    [SerializeField] public Rigidbody2D rigidbody;
     [SerializeField] private Vector2 movement;
-    [SerializeField] public CapsuleCollider2D collider;
 
     private void Awake()
     {
         cielInput = new CielInput();
-        collider = GetComponent<CapsuleCollider2D>();
-        rigidbody = GetComponent<Rigidbody2D>();
-        if (rigidbody is null)
-        {
-            Debug.LogError("RigidBody is not found!");
-        }
     }
 
     private void OnEnable()
@@ -35,7 +27,7 @@ public class CielControl : MonoBehaviour
     private void Update()
     {
         #region Controller
-
+        Vector2 dir = Vector2.zero;
         //Up Down Animation
 
         if (Keyboard.current.wKey.wasPressedThisFrame)
@@ -134,6 +126,5 @@ public class CielControl : MonoBehaviour
     private void FixedUpdate()
     {
         movement = cielInput.Player.Move.ReadValue<Vector2>();
-        rigidbody.velocity = movement * speed;
     }
 }
