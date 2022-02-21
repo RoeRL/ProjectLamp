@@ -23,13 +23,13 @@ public class GUIManager : MonoBehaviour
         }
     }
 
-    void Resume()
+    public void Resume()
     {
         pauseMenGUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
-    void Pause()
+    public void Pause()
     {
         pauseMenGUI.SetActive(true);
         Time.timeScale = 0f;
