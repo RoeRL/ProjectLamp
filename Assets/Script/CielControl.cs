@@ -31,8 +31,8 @@ public class CielControl : MonoBehaviour
         cielInput.Player.Disable();
     }
 
-    // Update is called once per frame
-    private void Update()
+
+    public void Move()
     {
         #region Controller
 
