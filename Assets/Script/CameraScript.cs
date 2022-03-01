@@ -2,29 +2,25 @@ using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
-    [Header("Configuration")]
-    [SerializeField] private bool autoFindPlayer;
+    public Transform target;
+    public float lerpSpeed = 1.0f;
 
-    [SerializeField] private GameObject playerGameObject;
+    private Vector3 offset;
 
-    [SerializeField] private bool autoOffsetCamera;
-    [SerializeField] private Vector3 cameraOffset;
+    private Vector3 targetPos;
 
-    private void Awake()
+    private void Start()
     {
-        if (autoFindPlayer)
-        {
-            playerGameObject = GameObject.FindGameObjectWithTag("Player");
-        }
+        if (target == null) return;
 
-        if (autoOffsetCamera && autoFindPlayer)
-        {
-            cameraOffset = (transform.position - playerGameObject.transform.position);
-        }
+        offset = transform.position - target.position;
     }
 
-    private void LateUpdate()
+    private void Update()
     {
-        transform.position = (playerGameObject.transform.position + cameraOffset);
+        if (target == null) return;
+
+        targetPos = target.position + offset;
+        transform.position = Vector3.Lerp(transform.position, targetPos, lerpSpeed * Time.deltaTime);
     }
 }

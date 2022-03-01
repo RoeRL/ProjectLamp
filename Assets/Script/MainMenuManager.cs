@@ -11,6 +11,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void StartGame()
     {
+        Time.timeScale = 1;
         StartCoroutine(Fading());
     }
 
@@ -18,6 +19,6 @@ public class MainMenuManager : MonoBehaviour
     {
         anim.SetBool("Fade", true);
         yield return new WaitUntil(() => image.color.a == 1);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("GUITest");
     }
 }
