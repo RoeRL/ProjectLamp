@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GUIManager : MonoBehaviour
 {
-    public bool GameIsPaused;
-    public GameObject pauseMenGUI;
+    public bool GameStatusIsPaused;
+    public bool GameMenuIsPaused;
+    public GameObject pauseStatusGUI;
+    public GameObject pauseMenuGUI;
     // Update is called once per frame
     private void Start()
     {
@@ -14,31 +17,65 @@ public class GUIManager : MonoBehaviour
     }
     void Update()
     {
-        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        if (Keyboard.current.tabKey.wasPressedThisFrame)
         {
-            if (GameIsPaused)
+            if (GameStatusIsPaused)
             {
-                Resume();
+                ResumeStatus();
             }
             else
             {
-                Pause();
+                PauseStatus();
+            }
+        }
+        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            if (GameMenuIsPaused)
+            {
+                ResumeMenu();
+            }
+            else
+            {
+                PauseMenu();
             }
         }
     }
 
-    public void Resume()
+    public void ResumeStatus()
     {
         GameObject.Find("Ciel").GetComponent<CielControl>().enabled = true;
-        pauseMenGUI.SetActive(false);
+        pauseStatusGUI.SetActive(false);
         Time.timeScale = 1f;
-        GameIsPaused = false;
+        GameStatusIsPaused = false;
     }
-    public void Pause()
+
+    public void ResumeMenu()
+    {
+        GameObject.Find("Ciel").GetComponent<CielControl>().enabled = true;
+        pauseMenuGUI.SetActive(false);
+        Time.timeScale = 1f;
+        GameMenuIsPaused = false;
+    }
+
+    public void PauseStatus()
     {
         GameObject.Find("Ciel").GetComponent<CielControl>().enabled = false;
-        pauseMenGUI.SetActive(true);
+        pauseStatusGUI.SetActive(true);
         Time.timeScale = 0f;
-        GameIsPaused = true;
+        GameStatusIsPaused = true;
+    }
+
+    public void PauseMenu()
+    {
+        GameObject.Find("Ciel").GetComponent<CielControl>().enabled = false;
+        pauseMenuGUI.SetActive(true);
+        Time.timeScale = 0f;
+        GameMenuIsPaused = true;
+    }
+
+    public void ExitMenu()
+    {
+        GameObject.Find("Ciel").GetComponent<CielControl>().enabled = true;
+        SceneManager.LoadScene("MenuScene");
     }
 }
