@@ -3,13 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GUIManager : MonoBehaviour
 {
-    public bool GameStatusIsPaused;
-    public bool GameMenuIsPaused;
+    [HideInInspector] public bool GameStatusIsPaused;
+    [HideInInspector] public bool GameMenuIsPaused;
+    [Header("Property: ")]
+    public Animator anim;
+    public Image blackFadeImage;
+    [Header("GUI: ")]
     public GameObject pauseStatusGUI;
     public GameObject pauseMenuGUI;
+    public GameObject bagGUI;
     // Update is called once per frame
     private void Start()
     {
@@ -39,7 +45,13 @@ public class GUIManager : MonoBehaviour
                 PauseMenu();
             }
         }
+        if (Keyboard.current.iKey.wasPressedThisFrame)
+        {
+            OpenBag();
+        }
     }
+
+    
 
     public void ResumeStatus()
     {
@@ -77,5 +89,22 @@ public class GUIManager : MonoBehaviour
     {
         GameObject.Find("Ciel").GetComponent<CielControl>().enabled = true;
         SceneManager.LoadScene("MenuScene");
+    }
+
+    public void OpenBag()
+    {
+        bagGUI.SetActive(true);
+    }
+
+    public void StartGame()
+    {
+        Time.timeScale = 1;
+        StartCoroutine(Fading());
+    }
+    private IEnumerator Fading()
+    {
+        anim.SetBool("Fade", true);
+        yield return new WaitUntil(() => blackFadeImage.color.a == 1);
+        SceneManager.LoadScene("GUITest");
     }
 }

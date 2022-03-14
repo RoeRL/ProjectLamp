@@ -198,6 +198,90 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 74719564}
   m_CullTransparentMesh: 1
+--- !u!1001 &302602633
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7621094101855957836, guid: c6862654fe3151541b8e3afab29f5133, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 1494048884}
+    - target: {fileID: 7621094101855957836, guid: c6862654fe3151541b8e3afab29f5133, type: 3}
+      propertyPath: image
+      value: 
+      objectReference: {fileID: 1494048885}
+    - target: {fileID: 7621094101855957836, guid: c6862654fe3151541b8e3afab29f5133, type: 3}
+      propertyPath: blackFadeImage
+      value: 
+      objectReference: {fileID: 1494048885}
+    - target: {fileID: 7621094101855957837, guid: c6862654fe3151541b8e3afab29f5133, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7621094101855957837, guid: c6862654fe3151541b8e3afab29f5133, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 42.174828
+      objectReference: {fileID: 0}
+    - target: {fileID: 7621094101855957837, guid: c6862654fe3151541b8e3afab29f5133, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 34.956482
+      objectReference: {fileID: 0}
+    - target: {fileID: 7621094101855957837, guid: c6862654fe3151541b8e3afab29f5133, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -296.81467
+      objectReference: {fileID: 0}
+    - target: {fileID: 7621094101855957837, guid: c6862654fe3151541b8e3afab29f5133, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7621094101855957837, guid: c6862654fe3151541b8e3afab29f5133, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7621094101855957837, guid: c6862654fe3151541b8e3afab29f5133, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7621094101855957837, guid: c6862654fe3151541b8e3afab29f5133, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7621094101855957837, guid: c6862654fe3151541b8e3afab29f5133, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7621094101855957837, guid: c6862654fe3151541b8e3afab29f5133, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7621094101855957837, guid: c6862654fe3151541b8e3afab29f5133, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7621094101855957839, guid: c6862654fe3151541b8e3afab29f5133, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 7621094101855957839, guid: c6862654fe3151541b8e3afab29f5133, type: 3}
+      propertyPath: m_Name
+      value: GUIManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c6862654fe3151541b8e3afab29f5133, type: 3}
+--- !u!114 &398823019 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7621094101855957836, guid: c6862654fe3151541b8e3afab29f5133, type: 3}
+  m_PrefabInstance: {fileID: 302602633}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15f970e05d987394eb1773ff0c925256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &664223071
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,8 +608,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1343872596}
-        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+      - m_Target: {fileID: 398823019}
+        m_TargetAssemblyTypeName: GUIManager, Assembly-CSharp
         m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
