@@ -19,6 +19,7 @@ public class CielControl : MonoBehaviour
         {
             Debug.LogError("RigidBody is not found!");
         }
+
     }
 
     private void OnEnable()
