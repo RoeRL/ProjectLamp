@@ -9,7 +9,6 @@ public class CielControl : MonoBehaviour
     [SerializeField] private new Rigidbody2D rigidbody;
     [SerializeField] private Vector2 movement;
     [SerializeField] private new CapsuleCollider2D collider;
-
     private void Awake()
     {
         cielInput = new CielInput();
