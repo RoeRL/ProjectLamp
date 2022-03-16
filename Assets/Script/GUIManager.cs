@@ -9,6 +9,7 @@ public class GUIManager : MonoBehaviour
 {
     [HideInInspector] public bool GameStatusIsPaused;
     [HideInInspector] public bool GameMenuIsPaused;
+    [HideInInspector] public bool BagIsOpen;
     [Header("Property: ")]
     public Animator anim;
     public Image blackFadeImage;
@@ -47,7 +48,14 @@ public class GUIManager : MonoBehaviour
         }
         if (Keyboard.current.iKey.wasPressedThisFrame)
         {
-            OpenBag();
+            if (BagIsOpen)
+            {
+                CloseBag();
+            }
+            else
+            {
+                OpenBag();
+            }
         }
     }
 
@@ -93,7 +101,18 @@ public class GUIManager : MonoBehaviour
 
     public void OpenBag()
     {
+        GameObject.Find("Ciel").GetComponent<CielControl>().enabled = false;
+        Time.timeScale = 0f;
+        BagIsOpen = true;
         bagGUI.SetActive(true);
+    }
+
+    public void CloseBag()
+    {
+        GameObject.Find("Ciel").GetComponent<CielControl>().enabled = true;
+        bagGUI.SetActive(false);
+        Time.timeScale = 1f;
+        BagIsOpen = false;
     }
 
     public void StartGame()
